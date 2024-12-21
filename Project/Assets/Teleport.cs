@@ -11,16 +11,42 @@ public class Teleport : MonoBehaviour
 
     public GameObject sandalye1;
     public GameObject masa;
-    public GameObject not;
     public GameObject kitap;
     public GameObject şişe1;
     public GameObject şişe2;
     public GameObject sandalye2;
     public GameObject yatak;
     public GameObject yatakIc;
+
+    public GameObject note1;
+    public GameObject note2;
+    public GameObject note3;
+    public GameObject note4;
+    public GameObject note5;
+
+    public GameObject lightToClose;
+    public GameObject lightToClose2;
+    public GameObject lightToClose3;
+
+    public GameObject besik;
+
+    public PlayNoise playNoiseBaby;
+    public PlayNoise playNoiseWhisper;
+
+    public AudioSource crackingSound;
+
+    public GameObject lightToRed;
+    public UnityEngine.Light lt;
+    private Color oldColor;
+
+void Start()
+    {
+        oldColor=lt.color;
+    }
+
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.transform.CompareTag("Player") && isReadyToTeleport)
+        if (collision.transform.CompareTag("Player") && isReadyToTeleport && stateMachine.readTheNote && !playNoiseBaby.isPlaying && !playNoiseWhisper.isPlaying ) // If player enters trigger
         {
 
             UpdateState();
@@ -37,19 +63,51 @@ public class Teleport : MonoBehaviour
     void UpdateState(){
         //do something
         //stateMachine.door1Lock=true;
-        Debug.Log(stateMachine.state);
+
         if(stateMachine.state==0){
             stateMachine.state=1;
+            note2.SetActive(true);
             masa.SetActive(false);
-            not.SetActive(false);
+            note1.SetActive(false);
             kitap.SetActive(false);
             şişe1.SetActive(false);
             şişe2.SetActive(false);
+            lightToClose.SetActive(false);
+            lightToClose2.SetActive(false);
+            lightToClose3.SetActive(false);
             
         }
         else if(stateMachine.state==1){
-            
+            stateMachine.state=2;
+            note2.SetActive(false);
+            note3.SetActive(true);
+            sandalye1.SetActive(false);
         }
+        else if (stateMachine.state==2){
+            stateMachine.state=3;
+            note3.SetActive(false);
+            note4.SetActive(true);
+            sandalye2.SetActive(false);
+        }
+        else if (stateMachine.state==3){
+            stateMachine.state=4;
+            note4.SetActive(false);
+            note5.SetActive(true);
+            yatak.SetActive(false);
+            besik.SetActive(true);
+            lt.color=Color.red;
+            Debug.Log(lt.color);
+        }else if (stateMachine.state==4){
+            stateMachine.state=5;
+            //chnage the color of the light to FFD69E
+            lt.color=oldColor;
+            Debug.Log(lt.color);
+            besik.SetActive(false);
+            crackingSound.Stop();
+        }
+        
+
+        stateMachine.readTheNote=false;
     }
     Vector3 CalculateOffset(Vector3 contactPoint)
     {

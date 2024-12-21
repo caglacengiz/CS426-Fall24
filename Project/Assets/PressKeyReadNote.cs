@@ -10,8 +10,14 @@ public class PressKeyReadNote : MonoBehaviour
     
     public bool Action = false;             // Whether the player is in range
     public GameObject NoteUI;
+
+    public bool isOpened = false;
     // Start is called before the first frame update
     public StateMachine stateMachine;
+
+    public Light lightToBum;
+
+    public 
     void Start()
     {
         Instruction.SetActive(false);       // Hide instruction at the start
@@ -40,17 +46,35 @@ public class PressKeyReadNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)&& Action) // If R is pressed
+        if (Input.GetKeyDown(KeyCode.R)&& Action && !isOpened) // If R is pressed
         {
+            isOpened = true;
             NoteUI.SetActive(true);
             playerController.LockMovement();
             PaperSound.Play();
-        }else if (Input.GetKeyDown(KeyCode.Escape) && Action)
+        }else if (Input.GetKeyDown(KeyCode.Q) && Action && isOpened) // If E is pressed
         {
+            Debug.Log("Q Pressed");
+            
+            if(lightToBum!= null){
+                Debug.Log(lightToBum.state);
+                Debug.Log("Light to Bum");
+                if(stateMachine.state == lightToBum.state){
+                    lightToBum.bumSound();
+                    lightToBum.flicker = false;
+                
+            }
+            }
+            
+            isOpened = false;
             stateMachine.door1Lock = false;
+            stateMachine.readTheNote = true;
             NoteUI.SetActive(false);
             playerController.UnlockMovement();
-            PaperSound.Play();
+            if(lightToBum==null){
+                PaperSound.Play();
+            }
+            
         }
     }
 }
