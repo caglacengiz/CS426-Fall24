@@ -14,6 +14,9 @@ public class Light : MonoBehaviour
     public AudioSource bum;
 
     private float timer=0;
+
+    private bool isPoped = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class Light : MonoBehaviour
             bum.Play();
         }
         turnOffLight();
+        isPoped = true;
     }
 void turnOffLight(){
        lightToBum.SetActive(false);
@@ -47,6 +51,9 @@ void turnOffLight(){
                 timer=0;
             }
             
+        }
+        if(isPoped && stateMachine.state==state+1){ 
+            lightToBum.SetActive(true);
         }
         
     }

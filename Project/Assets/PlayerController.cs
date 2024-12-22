@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canMove = true; // Controls movement logic
+    public bool canRotate = true; // Controls rotation logic
 
     private bool isTeleporting = false; // Flag to stop movement during teleportation
 
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
 
         // Player and Camera rotation
-        if (canMove)
+        if (canRotate)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
@@ -85,10 +86,15 @@ public class PlayerController : MonoBehaviour
     public void LockMovement()
     {
         canMove = false;
+        canRotate = false;
         //lock cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         
+    }
+    public void LockMovementWithoutCursor()
+    {
+        canMove = false;
     }
     public void UnlockMovement()
     {
@@ -96,7 +102,7 @@ public class PlayerController : MonoBehaviour
         // Unlock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        canRotate = true;
         canMove = true;
     }
 }

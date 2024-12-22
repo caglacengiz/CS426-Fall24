@@ -35,9 +35,12 @@ public class Teleport : MonoBehaviour
 
     public AudioSource crackingSound;
 
-    public GameObject lightToRed;
     public UnityEngine.Light lt;
+    public UnityEngine.Light lt2;
     private Color oldColor;
+
+    public PacifierSpawner pacifierSpawner;
+    
 
 void Start()
     {
@@ -75,19 +78,18 @@ void Start()
             lightToClose.SetActive(false);
             lightToClose2.SetActive(false);
             lightToClose3.SetActive(false);
-            
         }
         else if(stateMachine.state==1){
             stateMachine.state=2;
             note2.SetActive(false);
             note3.SetActive(true);
-            sandalye1.SetActive(false);
+            sandalye2.SetActive(false);
         }
         else if (stateMachine.state==2){
             stateMachine.state=3;
             note3.SetActive(false);
             note4.SetActive(true);
-            sandalye2.SetActive(false);
+            sandalye1.SetActive(false);
         }
         else if (stateMachine.state==3){
             stateMachine.state=4;
@@ -96,14 +98,17 @@ void Start()
             yatak.SetActive(false);
             besik.SetActive(true);
             lt.color=Color.red;
+            lt2.color=Color.red;
             Debug.Log(lt.color);
         }else if (stateMachine.state==4){
             stateMachine.state=5;
             //chnage the color of the light to FFD69E
             lt.color=oldColor;
+            lt2.color=oldColor;
             Debug.Log(lt.color);
             besik.SetActive(false);
             crackingSound.Stop();
+            stateMachine.door1Lock=true;
         }
         
 
