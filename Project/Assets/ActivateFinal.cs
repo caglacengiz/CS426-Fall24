@@ -11,6 +11,8 @@ public class ActivateFinal : MonoBehaviour
     public AudioSource laugh;
     public UnityEngine.Light lt;
     public UnityEngine.Light lt2;
+    public UnityEngine.Light lt3;
+    public UnityEngine.Light lt4;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,8 @@ public class ActivateFinal : MonoBehaviour
         yield return new WaitForSeconds(5);
         lt.color = Color.red;
         lt2.enabled = false;
+        lt3.color = Color.red;
+        lt4.enabled = false;
         pacifierSpawner.SpawnAllPacifiers();
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);

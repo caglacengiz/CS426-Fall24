@@ -37,6 +37,8 @@ public class Teleport : MonoBehaviour
 
     public UnityEngine.Light lt;
     public UnityEngine.Light lt2;
+    public UnityEngine.Light lt3;
+    public UnityEngine.Light lt4;
     private Color oldColor;
 
     public PacifierSpawner pacifierSpawner;
@@ -99,12 +101,16 @@ void Start()
             besik.SetActive(true);
             lt.color=Color.red;
             lt2.color=Color.red;
+            lt3.color=Color.red;
+            lt4.color=Color.red;
             Debug.Log(lt.color);
         }else if (stateMachine.state==4){
             stateMachine.state=5;
             //chnage the color of the light to FFD69E
             lt.color=oldColor;
             lt2.color=oldColor;
+            lt3.color=oldColor;
+            lt4.color=oldColor;
             Debug.Log(lt.color);
             besik.SetActive(false);
             crackingSound.Stop();
