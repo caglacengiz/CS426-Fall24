@@ -348,6 +348,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Anektor.cs"
 "Assets/BarrelRunner.cs"
 "Assets/Character/FinalCharacterController/Input/PlayerControls.cs"
 "Assets/Character/FinalCharacterController/Scripts/PlayerAnimation.cs"
@@ -357,9 +358,11 @@
 "Assets/CoinCollectorTrigger.cs"
 "Assets/CoinCounter.cs"
 "Assets/coinSpin.cs"
+"Assets/DoorTrigger.cs"
 "Assets/LoseSceneUI.cs"
 "Assets/MainMenu.cs"
 "Assets/SkeletonRunner.cs"
+"Assets/WinSceneUI.cs"
 -langversion:9.0
 
 /deterministic
