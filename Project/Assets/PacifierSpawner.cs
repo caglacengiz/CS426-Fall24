@@ -4,7 +4,7 @@ public class PacifierSpawner : MonoBehaviour
 {
     public GameObject pacifierPrefab; // Prefab emzik modeli
     public Transform[] spawnPoints; // Odanın köşeleri
-    public int maxPacifiersPerPoint = 15; // Her noktadan maksimum spawn sayısı
+    public int maxPacifiersPerPoint = 10; // Her noktadan maksimum spawn sayısı
 
   
     public void SpawnAllPacifiers()

@@ -355,6 +355,7 @@
 "Assets/PacifierEffect.cs"
 "Assets/PacifierPhysics.cs"
 "Assets/PacifierSpawner.cs"
+"Assets/PerformanceLogger.cs"
 "Assets/PlayBesik.cs"
 "Assets/PlayerController.cs"
 "Assets/PlayFinal.cs"

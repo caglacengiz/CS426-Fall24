@@ -13,6 +13,8 @@ public class ActivateFinal : MonoBehaviour
     public UnityEngine.Light lt2;
     public UnityEngine.Light lt3;
     public UnityEngine.Light lt4;
+
+    public PerformanceLogger performanceLogger;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +42,10 @@ public class ActivateFinal : MonoBehaviour
         lt2.enabled = false;
         lt3.color = Color.red;
         lt4.enabled = false;
+        performanceLogger.StartLogging();
         pacifierSpawner.SpawnAllPacifiers();
         yield return new WaitForSeconds(5);
+        performanceLogger.StopLogging();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
 

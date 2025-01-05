@@ -99,7 +99,6 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
--define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
@@ -294,32 +293,33 @@
 -r:"C:/Program Files/Unity 2021.3.35f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.WindModule.dll"
 -r:"C:/Program Files/Unity 2021.3.35f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll"
 -r:"C:/Users/Cagla/Documents/GitHub/CS426-Fall24/Project/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
--r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Burst.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.InputSystem.ForUI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.InputSystem.ref.dll"
--r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Mathematics.ref.dll"
--r:"Library/Bee/artifacts/1900b0aP.dag/Unity.RenderPipelines.Core.Runtime.ref.dll"
--r:"Library/Bee/artifacts/1900b0aP.dag/Unity.RenderPipelines.Core.ShaderLibrary.ref.dll"
--r:"Library/Bee/artifacts/1900b0aP.dag/Unity.RenderPipelines.HighDefinition.Config.Runtime.ref.dll"
--r:"Library/Bee/artifacts/1900b0aP.dag/Unity.RenderPipelines.HighDefinition.Runtime.ref.dll"
--r:"Library/Bee/artifacts/1900b0aP.dag/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Timeline.ref.dll"
--r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualEffectGraph.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Core.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Flow.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
+"Assets/ActivateFinal.cs"
+"Assets/BackgroundMusic.cs"
+"Assets/BriefScript.cs"
+"Assets/FinalActivator.cs"
 "Assets/Light.cs"
 "Assets/MainMenu.cs"
+"Assets/PacifierEffect.cs"
+"Assets/PacifierPhysics.cs"
+"Assets/PacifierSpawner.cs"
 "Assets/PlayBesik.cs"
 "Assets/PlayerController.cs"
+"Assets/PlayFinal.cs"
 "Assets/PlayNoise.cs"
 "Assets/PressKeyOpenDoor.cs"
 "Assets/PressKeyReadNote.cs"
 "Assets/StateMachine.cs"
 "Assets/swing.cs"
 "Assets/Teleport.cs"
+"Assets/ThrowChair.cs"
 -langversion:9.0
 
 /deterministic
